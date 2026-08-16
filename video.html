@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video — Cavalerii Templieri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="cross" aria-hidden="true"></div>
+  <h1 class="site-title">Cavalerii Templieri</h1>
+  <p class="site-tagline">Istorie · Mister · Adevăr</p>
+  <nav class="site-nav">
+    <a href="index.html">Acasă</a>
+    <a href="foto.html">Foto</a>
+    <a href="video.html">Video</a>
+    <a href="despre.html">Despre</a>
+  </nav>
+</header>
+
+<main>
+  <p class="intro">
+    Secțiune video — materiale despre istoria, misterele și adevărul din spatele
+    Ordinului Templier.
+  </p>
+
+  <!--
+    CUM ADAUGI UN VIDEO NOU:
+
+    Varianta A — video de pe YouTube:
+    1. Copiază un bloc <div class="video-item">...</div> de mai jos
+    2. La iframe, schimbă linkul din src cu linkul video-ului tău, în format:
+       https://www.youtube.com/embed/ID_VIDEO
+       (ID_VIDEO e partea de după "watch?v=" din linkul normal de YouTube)
+
+    Varianta B — fișier video propriu:
+    1. Pune fișierul video în folderul "video" (ex: video/clip1.mp4)
+    2. Înlocuiește <iframe> cu:
+       <video controls src="../video/clip1.mp4"></video>
+  -->
+
+  <div class="video-grid">
+
+    <div class="video-item">
+      <h2>Primul video va apărea aici</h2>
+      <div class="video-frame">
+        <div class="placeholder-box" style="height:100%">
+          Trimite-mi linkul YouTube sau fișierul video ca să-l adaug
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  &copy; 2026 Cavalerii Templieri — blog de istorie. Conținut original.
+</footer>
+
+</body>
+</html>
