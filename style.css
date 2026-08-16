@@ -1,0 +1,267 @@
+/* ===== Cavalerii Templieri — stil general ===== */
+
+:root {
+  --parchment: #f4ecd8;
+  --parchment-dark: #e8dcc0;
+  --ink: #2b2016;
+  --ink-soft: #5a4a38;
+  --red: #7a1f1f;
+  --red-dark: #5c1414;
+  --gold: #a8862f;
+  --border: #c9b98a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(168,134,47,0.05), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(122,31,31,0.04), transparent 45%);
+  color: var(--ink);
+  font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Header ---- */
+
+header.site-header {
+  background: linear-gradient(180deg, var(--red-dark), var(--red));
+  color: var(--parchment);
+  padding: 2.2rem 1.5rem 1.6rem;
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+  position: relative;
+}
+
+.cross {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.8rem;
+  position: relative;
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: var(--parchment);
+}
+
+.cross::before {
+  left: 50%;
+  top: 0;
+  width: 22%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.cross::after {
+  top: 50%;
+  left: 0;
+  height: 22%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.site-title {
+  font-size: 2.1rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.site-tagline {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: var(--parchment-dark);
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+nav.site-nav {
+  margin-top: 1.3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+nav.site-nav a {
+  color: var(--parchment);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+nav.site-nav a:hover {
+  border-bottom-color: var(--gold);
+  text-decoration: none;
+}
+
+/* ---- Main layout ---- */
+
+main {
+  flex: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+  width: 100%;
+}
+
+/* ---- Article cards on homepage ---- */
+
+.intro {
+  text-align: center;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.post-card {
+  background: var(--parchment-dark);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--red);
+  border-radius: 4px;
+  padding: 1.5rem 1.7rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(43, 32, 22, 0.12);
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 20px;
+  padding: 0.15rem 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.post-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.post-card h2 a {
+  color: var(--ink);
+}
+
+.post-excerpt {
+  color: var(--ink-soft);
+  margin: 0 0 0.7rem;
+  font-size: 0.98rem;
+}
+
+.read-more {
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Single article page ---- */
+
+article.post {
+  background: var(--parchment-dark);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem 2.2rem 2.4rem;
+}
+
+.post-header {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-header h1 {
+  font-size: 1.9rem;
+  margin: 0.4rem 0 0.3rem;
+  color: var(--ink);
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+article.post h2 {
+  color: var(--red-dark);
+  font-size: 1.35rem;
+  margin-top: 2rem;
+}
+
+article.post p {
+  margin: 0 0 1rem;
+}
+
+article.post blockquote {
+  border-left: 4px solid var(--gold);
+  margin: 1.3rem 0;
+  padding: 0.4rem 1.2rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  background: rgba(168,134,47,0.08);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.92rem;
+}
+
+/* ---- Footer ---- */
+
+footer.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--border);
+  background: var(--parchment-dark);
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 1.6rem;
+  }
+  article.post {
+    padding: 1.4rem 1.3rem 1.8rem;
+  }
+}
