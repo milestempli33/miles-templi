@@ -442,6 +442,12 @@ article.post blockquote {
   border: 0;
 }
 
+.video-frame.vertical {
+  padding-bottom: 177.78%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 /* ---- Contact ---- */
 
 .contact-list {
