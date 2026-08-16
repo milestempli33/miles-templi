@@ -120,6 +120,10 @@ main {
   width: 100%;
 }
 
+main.home-main {
+  max-width: 1080px;
+}
+
 /* ---- Article cards on homepage ---- */
 
 .intro {
@@ -136,14 +140,13 @@ main {
   gap: 1.6rem;
 }
 
-.home-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
-  align-items: start;
+.home-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.home-column h2 {
+.home-section h2 {
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -153,10 +156,15 @@ main {
   margin: 0 0 1.3rem;
 }
 
-@media (max-width: 760px) {
-  .home-columns {
+.home-section .post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .home-section .post-list {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
   }
 }
 
