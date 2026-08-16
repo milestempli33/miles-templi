@@ -9,6 +9,12 @@
   --red-dark: #5c1414;
   --gold: #a8862f;
   --border: #c9b98a;
+
+  /* Culori de categorie: Istorie / Mister / Adevăr */
+  --c-istorie: #b08d57;
+  --c-mister: #7a1f1f;
+  --c-adevar-fill: #d8d0c2;
+  --c-adevar-accent: #a89a7d;
 }
 
 * {
@@ -23,6 +29,7 @@ html, body {
 body {
   background-color: var(--parchment);
   background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
     radial-gradient(circle at 20% 20%, rgba(168,134,47,0.05), transparent 40%),
     radial-gradient(circle at 80% 60%, rgba(122,31,31,0.04), transparent 45%);
   color: var(--ink);
@@ -51,6 +58,29 @@ header.site-header {
   text-align: center;
   border-bottom: 4px solid var(--gold);
   position: relative;
+  overflow: hidden;
+}
+
+header.site-header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%23f4ecd8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header.site-header > * {
+  position: relative;
+  z-index: 1;
 }
 
 .site-logo {
@@ -147,13 +177,27 @@ main.home-main {
 }
 
 .home-section h2 {
+  position: relative;
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--red-dark);
   border-bottom: 2px solid var(--border);
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.9rem;
   margin: 0 0 1.3rem;
+}
+
+.home-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%23a8862f'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .home-section .post-list {
@@ -172,9 +216,16 @@ main.home-main {
   border-left-color: var(--gold);
 }
 
-.post-card.community .post-tag {
-  color: var(--gold);
-  border-color: var(--gold);
+.post-card.card-istorie {
+  border-left-color: var(--c-istorie);
+}
+
+.post-card.card-mister {
+  border-left-color: var(--c-mister);
+}
+
+.post-card.card-adevar {
+  border-left-color: var(--c-adevar-accent);
 }
 
 .post-hashtags {
@@ -203,11 +254,34 @@ main.home-main {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--red);
-  border: 1px solid var(--red);
+  border: 1px solid transparent;
   border-radius: 20px;
   padding: 0.15rem 0.7rem;
   margin-bottom: 0.6rem;
+}
+
+.post-tag.tag-istorie {
+  background: var(--c-istorie);
+  color: #fff8ec;
+  border-color: var(--c-istorie);
+}
+
+.post-tag.tag-mister {
+  background: var(--c-mister);
+  color: var(--parchment);
+  border-color: var(--c-mister);
+}
+
+.post-tag.tag-adevar {
+  background: var(--c-adevar-fill);
+  color: #3a2f22;
+  border-color: var(--c-adevar-accent);
+}
+
+.post-tag.tag-comunitate {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .post-card h2 {
