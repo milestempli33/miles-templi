@@ -1,20 +1,26 @@
 /* ===== Cavalerii Templieri — stil general ===== */
 
 :root {
+  /* Paletă: cărbune + pergament + roșu templier + auriu vechi */
+  --bg-main: #151311;
+  --bg-section: #1d1a16;
+  --bg-card: #25211b;
+  --text-main: #e5d8bd;
+  --text-secondary: #b6a990;
+  --gold: #b28a45;
+  --gold-dark: #8a6a34;
+  --red: #8c1d1d;
+  --red-dark: #641515;
+  --border: #4a3d2d;
+
+  /* păstrate pentru elemente care rămân deschise la culoare (ex. logo) */
   --parchment: #f4ecd8;
-  --parchment-dark: #e8dcc0;
-  --ink: #2b2016;
-  --ink-soft: #5a4a38;
-  --red: #7a1f1f;
-  --red-dark: #5c1414;
-  --gold: #a8862f;
-  --border: #c9b98a;
 
   /* Culori de categorie: Istorie / Mister / Adevăr */
-  --c-istorie: #b08d57;
-  --c-mister: #7a1f1f;
-  --c-adevar-fill: #d8d0c2;
-  --c-adevar-accent: #a89a7d;
+  --c-istorie: var(--gold);
+  --c-mister: var(--red);
+  --c-adevar-fill: var(--text-main);
+  --c-adevar-accent: var(--text-secondary);
 }
 
 * {
@@ -27,12 +33,12 @@ html, body {
 }
 
 body {
-  background-color: var(--parchment);
+  background-color: var(--bg-main);
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
-    radial-gradient(circle at 20% 20%, rgba(168,134,47,0.05), transparent 40%),
-    radial-gradient(circle at 80% 60%, rgba(122,31,31,0.04), transparent 45%);
-  color: var(--ink);
+    radial-gradient(circle at 20% 20%, rgba(178,138,69,0.06), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(140,29,29,0.05), transparent 45%);
+  color: var(--text-main);
   font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
   line-height: 1.65;
   min-height: 100vh;
@@ -41,22 +47,23 @@ body {
 }
 
 a {
-  color: var(--red);
+  color: var(--gold);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--red);
   text-decoration: underline;
 }
 
 /* ---- Header ---- */
 
 header.site-header {
-  background: linear-gradient(180deg, var(--red-dark), var(--red));
-  color: var(--parchment);
+  background: linear-gradient(180deg, var(--bg-section), var(--bg-main));
+  color: var(--text-main);
   padding: 2.2rem 1.5rem 1.6rem;
   text-align: center;
-  border-bottom: 4px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
   position: relative;
   overflow: hidden;
 }
@@ -69,11 +76,11 @@ header.site-header::before {
   width: 380px;
   height: 380px;
   transform: translate(-50%, -50%);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%23f4ecd8'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%23b28a45'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.07;
+  opacity: 0.09;
   pointer-events: none;
   z-index: 0;
 }
@@ -108,14 +115,27 @@ header.site-header > * {
   margin: 0;
   font-weight: normal;
   text-transform: uppercase;
+  color: var(--gold);
 }
 
 .site-tagline {
   margin: 0.5rem 0 0;
   font-size: 1rem;
-  color: var(--parchment-dark);
+  color: var(--text-secondary);
   font-style: italic;
   letter-spacing: 0.03em;
+}
+
+.site-tagline .tw-istorie {
+  color: var(--gold);
+}
+
+.site-tagline .tw-mister {
+  color: var(--red);
+}
+
+.site-tagline .tw-adevar {
+  color: var(--text-main);
 }
 
 nav.site-nav {
@@ -127,7 +147,7 @@ nav.site-nav {
 }
 
 nav.site-nav a {
-  color: var(--parchment);
+  color: var(--text-main);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -158,7 +178,7 @@ main.home-main {
 
 .intro {
   text-align: center;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   max-width: 620px;
   margin: 0 auto 2.5rem;
   font-size: 1.05rem;
@@ -181,7 +201,7 @@ main.home-main {
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--red-dark);
+  color: var(--gold);
   border-bottom: 2px solid var(--border);
   padding-bottom: 0.9rem;
   margin: 0 0 1.3rem;
@@ -195,9 +215,17 @@ main.home-main {
   transform: translateX(-50%);
   width: 18px;
   height: 18px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%23a8862f'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%23b28a45'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.home-section--comunitate h2 {
+  color: var(--red);
+}
+
+.home-section--comunitate h2::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%238c1d1d'/%3E%3C/svg%3E");
 }
 
 .home-section .post-list {
@@ -230,15 +258,15 @@ main.home-main {
 
 .post-hashtags {
   font-size: 0.78rem;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   font-style: italic;
   margin-top: 1.5rem;
 }
 
 .post-card {
-  background: var(--parchment-dark);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 5px solid var(--red);
+  border-left: 5px solid var(--gold);
   border-radius: 4px;
   padding: 1.5rem 1.7rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -246,7 +274,7 @@ main.home-main {
 
 .post-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(43, 32, 22, 0.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 .post-tag {
@@ -262,19 +290,19 @@ main.home-main {
 
 .post-tag.tag-istorie {
   background: var(--c-istorie);
-  color: #fff8ec;
+  color: var(--bg-main);
   border-color: var(--c-istorie);
 }
 
 .post-tag.tag-mister {
   background: var(--c-mister);
-  color: var(--parchment);
+  color: var(--text-main);
   border-color: var(--c-mister);
 }
 
 .post-tag.tag-adevar {
   background: var(--c-adevar-fill);
-  color: #3a2f22;
+  color: var(--bg-main);
   border-color: var(--c-adevar-accent);
 }
 
@@ -290,11 +318,11 @@ main.home-main {
 }
 
 .post-card h2 a {
-  color: var(--ink);
+  color: var(--gold);
 }
 
 .post-excerpt {
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   margin: 0 0 0.7rem;
   font-size: 0.98rem;
 }
@@ -308,14 +336,14 @@ main.home-main {
 /* ---- Single article page ---- */
 
 article.post {
-  background: var(--parchment-dark);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 2rem 2.2rem 2.4rem;
 }
 
 .post-header {
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--gold);
   padding-bottom: 1.1rem;
   margin-bottom: 1.5rem;
 }
@@ -323,17 +351,17 @@ article.post {
 .post-header h1 {
   font-size: 1.9rem;
   margin: 0.4rem 0 0.3rem;
-  color: var(--ink);
+  color: var(--gold);
 }
 
 .post-meta {
   font-size: 0.85rem;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   font-style: italic;
 }
 
 article.post h2 {
-  color: var(--red-dark);
+  color: var(--gold);
   font-size: 1.35rem;
   margin-top: 2rem;
 }
@@ -347,8 +375,8 @@ article.post blockquote {
   margin: 1.3rem 0;
   padding: 0.4rem 1.2rem;
   font-style: italic;
-  color: var(--ink-soft);
-  background: rgba(168,134,47,0.08);
+  color: var(--text-secondary);
+  background: rgba(178,138,69,0.08);
 }
 
 .back-link {
@@ -366,7 +394,7 @@ article.post blockquote {
 }
 
 .gallery-item {
-  background: var(--parchment-dark);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
@@ -382,7 +410,7 @@ article.post blockquote {
 .gallery-caption {
   padding: 0.7rem 0.9rem;
   font-size: 0.88rem;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
 }
 
 .placeholder-box {
@@ -392,11 +420,11 @@ article.post blockquote {
   justify-content: center;
   text-align: center;
   padding: 1rem;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-style: italic;
   border: 2px dashed var(--border);
-  background: rgba(168,134,47,0.06);
+  background: rgba(178,138,69,0.06);
 }
 
 /* ---- Secțiune video ---- */
@@ -409,9 +437,9 @@ article.post blockquote {
 }
 
 .video-item {
-  background: var(--parchment-dark);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 5px solid var(--red);
+  border-left: 5px solid var(--gold);
   border-radius: 4px;
   padding: 1.3rem 1.5rem;
 }
@@ -419,7 +447,7 @@ article.post blockquote {
 .video-item h2 {
   margin-top: 0;
   font-size: 1.2rem;
-  color: var(--ink);
+  color: var(--gold);
 }
 
 .video-frame {
@@ -430,7 +458,7 @@ article.post blockquote {
   overflow: hidden;
   border-radius: 4px;
   border: 1px solid var(--border);
-  background: #1a1410;
+  background: var(--bg-main);
 }
 
 .video-frame iframe,
@@ -471,7 +499,7 @@ article.post blockquote {
   flex-shrink: 0;
   width: 22px;
   height: 22px;
-  fill: var(--red);
+  fill: var(--gold);
 }
 
 /* ---- Footer ---- */
@@ -480,9 +508,9 @@ footer.site-footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.82rem;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   border-top: 1px solid var(--border);
-  background: var(--parchment-dark);
+  background: var(--bg-section);
 }
 
 .footer-social {
@@ -499,18 +527,18 @@ footer.site-footer {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--gold);
 }
 
 .footer-social a:hover {
-  background: var(--red-dark);
+  background: var(--gold-dark);
   text-decoration: none;
 }
 
 .footer-social svg {
   width: 18px;
   height: 18px;
-  fill: var(--parchment);
+  fill: var(--bg-main);
 }
 
 @media (max-width: 600px) {
