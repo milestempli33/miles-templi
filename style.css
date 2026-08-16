@@ -136,6 +136,46 @@ main {
   gap: 1.6rem;
 }
 
+.home-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  align-items: start;
+}
+
+.home-column h2 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--red-dark);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.6rem;
+  margin: 0 0 1.3rem;
+}
+
+@media (max-width: 760px) {
+  .home-columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.post-card.community {
+  border-left-color: var(--gold);
+}
+
+.post-card.community .post-tag {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.post-hashtags {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
 .post-card {
   background: var(--parchment-dark);
   border: 1px solid var(--border);
