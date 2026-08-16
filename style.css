@@ -402,9 +402,10 @@ article.post blockquote {
 /* ---- Secțiune video ---- */
 
 .video-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.6rem;
+  align-items: start;
 }
 
 .video-item {
@@ -444,7 +445,7 @@ article.post blockquote {
 
 .video-frame.vertical {
   padding-bottom: 177.78%;
-  max-width: 320px;
+  max-width: 220px;
   margin: 0 auto;
 }
 
