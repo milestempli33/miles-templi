@@ -121,6 +121,13 @@ header.site-header {
   color: var(--red);
 }
 
+.site-title .title-cross {
+  color: var(--red);
+  font-size: 0.85em;
+  margin: 0 0.35em;
+  display: inline-block;
+}
+
 .site-tagline {
   margin: 0.3rem 0 0;
   font-family: var(--title-font);
