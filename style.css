@@ -228,6 +228,14 @@ main.home-main {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%238c1d1d'/%3E%3C/svg%3E");
 }
 
+.home-section--valori h2 {
+  color: var(--gold-dark);
+}
+
+.home-section--valori h2::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M40,6 L60,6 L60,34 Q60,40 66,40 L94,40 L94,60 L66,60 Q60,60 60,66 L60,94 L40,94 L40,66 Q40,60 34,60 L6,60 L6,40 L34,40 Q40,40 40,34 Z' fill='%238a6a34'/%3E%3C/svg%3E");
+}
+
 .home-section .post-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -242,6 +250,10 @@ main.home-main {
 
 .post-card.community {
   border-left-color: var(--gold);
+}
+
+.post-card.valori {
+  border-left-color: var(--gold-dark);
 }
 
 .post-card.card-istorie {
@@ -310,6 +322,12 @@ main.home-main {
   background: transparent;
   color: var(--gold);
   border-color: var(--gold);
+}
+
+.post-tag.tag-valori {
+  background: transparent;
+  color: var(--gold-dark);
+  border-color: var(--gold-dark);
 }
 
 .post-card h2 {
